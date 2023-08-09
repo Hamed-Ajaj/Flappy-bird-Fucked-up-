@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.game-start{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100vw;
+    height: 100vh;
+    line-height: 3;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 50px;
+    box-shadow: 0 0 10px 5px black;
+    display: none;
+    z-index: 100;
+}
+.game-start.show{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game-start p{
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+}
+
+
+#score{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(113, 235, 60);
+    text-shadow: 2px 2px 2px black;
+}
+.game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100vw;
+    height: 100vh;
+    line-height: 3;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 50px;
+    box-shadow: 0 0 10px 5px black;
+    display: none;
+    z-index: 100;
+}
+.game-over h1{
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+.game-over #restart{
+    font-size: 30px;
+    color: white;
+    background-color: rgb(113, 235, 60);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+.game-over #restart:hover{
+    background-color: rgb(142, 236, 102);
+    color: black;
+}
+.game-over #restart:active{
+    opacity: .7;
+}
+.game-over #final-score{
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+.game-over.show{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#game{
+    margin: auto;
+    width: 600px;
+    height: 80vh;
+    border: 1px solid black;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+#block{
+ width: 50px;
+ height: 80vh;
+ background-color: rgb(113, 235, 60);
+ position: relative;
+ left: 400px;
+ border-radius: 10px;
+ animation: block 0s infinite linear;
+}
+
+@keyframes block {
+    0%{left:600px}
+    100%{left: -50px;}
+}
+
+#hole{
+    width: 50px;
+    height: 150px;
+    background-color: white;
+    position: relative;
+    left: 400px;
+    top: -500px;
+    box-shadow: none;
+    animation: block 0s infinite linear;
+}
+#hole.animate{
+    animation: block 3s infinite linear;
+}
+#block.animate{
+    animation: block 3s infinite linear;
+}
+#character{
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    transform: rotateX(200deg);
+    transform: rotateY(180deg);
+}
